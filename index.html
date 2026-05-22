@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calclator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container" id="calculatorApp">
+    <div class="calculator-main">
+        <div class="header">
+            <div class="title">Standard ☰</div>
+            <button id="themeToggle" class="theme-btn">تبديل المظهر 🌓</button>
+        </div>
+
+        <div class="display-area">
+            <div id="operationDisplay" class="operation-text"></div>
+            <div id="mainDisplay" class="current-text">0</div>
+        </div>
+
+        <div class="buttons-grid">
+            <button onclick="appendOperator('%')">%</button>
+            <button onclick="clearEntry()">CE</button>
+            <button onclick="clearAll()">C</button>
+            <button onclick="deleteLast()">⌫</button>
+
+            <button onclick="advancedCalc('inv')">¹/ₓ</button>
+            <button onclick="advancedCalc('sqr')">x²</button>
+            <button onclick="advancedCalc('sqrt')">√x</button>
+            <button onclick="appendOperator('/')">÷</button>
+
+            <button class="num" onclick="appendNumber('7')">7</button>
+            <button class="num" onclick="appendNumber('8')">8</button>
+            <button class="num" onclick="appendNumber('9')">9</button>
+            <button onclick="appendOperator('*')">×</button>
+
+            <button class="num" onclick="appendNumber('4')">4</button>
+            <button class="num" onclick="appendNumber('5')">5</button>
+            <button class="num" onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('-')">−</button>
+
+            <button class="num" onclick="appendNumber('1')">1</button>
+            <button class="num" onclick="appendNumber('2')">2</button>
+            <button class="num" onclick="appendNumber('3')">3</button>
+            <button onclick="appendOperator('+')">+</button>
+
+            <button onclick="toggleSign()">+/-</button>
+            <button class="num" onclick="appendNumber('0')">0</button>
+            <button class="num" onclick="appendNumber('.')">.</button>
+            <button class="equal-btn" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <div class="history-sidebar">
+        <div class="history-header">History</div>
+        <div id="historyList" class="history-list">
+            <p class="empty-msg">There's no history yet</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

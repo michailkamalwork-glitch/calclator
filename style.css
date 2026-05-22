@@ -1,0 +1,80 @@
+:root {
+    --bg-color: #f3f3f3;
+    --text-color: #000000;
+    --btn-bg: #f9f9f9;
+    --btn-num-bg: #ffffff;
+    --btn-hover: #e6e6e6;
+    --accent: #0067b8;
+    --side-bg: #eeeeee;
+}
+
+.dark-mode {
+    --bg-color: #202020;
+    --text-color: #ffffff;
+    --btn-bg: #323232;
+    --btn-num-bg: #3b3b3b;
+    --btn-hover: #3e3e3e;
+    --accent: #4cc2ff;
+    --side-bg: #2d2d2d;
+}
+
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    width: 850px;
+    height: 600px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    border: 1px solid #555;
+}
+
+.calculator-main { flex: 2; display: flex; flex-direction: column; padding: 10px; }
+
+.header { display: flex; justify-content: space-between; padding: 10px; font-weight: bold; }
+
+.theme-btn { 
+    background: none; border: 1px solid var(--text-color); 
+    color: var(--text-color); cursor: pointer; padding: 5px 10px; font-size: 12px;
+}
+
+.display-area { height: 140px; text-align: right; padding: 20px; }
+.operation-text { font-size: 16px; color: #888; height: 24px; }
+.current-text { font-size: 50px; font-weight: 600; margin-top: 10px; }
+
+.buttons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; flex: 1; }
+
+button {
+    border: none; background: var(--btn-bg); color: var(--text-color);
+    font-size: 18px; cursor: pointer; transition: 0.2s;
+}
+
+button:hover { background: var(--btn-hover); }
+button.num { background: var(--btn-num-bg); font-weight: bold; }
+
+.equal-btn { background: var(--accent) !important; color: white; }
+
+.history-sidebar { 
+    flex: 1; background-color: var(--side-bg); 
+    padding: 20px; border-left: 1px solid rgba(0,0,0,0.1);
+    display: flex; flex-direction: column;
+}
+
+.history-header { font-weight: bold; margin-bottom: 20px; }
+.history-list { overflow-y: auto; flex: 1; }
+
+.history-item { text-align: right; margin-bottom: 20px; cursor: pointer; padding: 5px; }
+.history-item:hover { background: rgba(0,0,0,0.05); }
+.h-exp { color: #888; font-size: 14px; }
+.h-res { font-size: 20px; font-weight: bold; }
+.empty-msg { font-size: 14px; color: #888; }
